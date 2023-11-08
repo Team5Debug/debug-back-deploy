@@ -1,20 +1,19 @@
 version: 0.0
 os: linux
 files:
-- source: /	
+  - source: /
     destination: /home/ubuntu/Debug/
     overwrite: yes
 permissions:
   - object: /home/ubuntu/Debug/
     owner: ubuntu
     group: ubuntu
-    mode: 755
+    mode: '755'
 hooks:
   AfterInstall:
     - location: scripts/stop.sh
-      timeout: 60
-      runas: ubuntu
-  ApplicationStart:
+      timeout: 180
+      runas: ubuntu # (optional) If you need to specify the user to run the script as
     - location: scripts/start.sh
-      timeout: 60
-      runas: ubuntu
+      timeout: 180
+      runas: ubuntu # (optional) If you need to specify the user to run the script as
