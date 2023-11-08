@@ -38,10 +38,8 @@ jobs:
     
 
     - name: Archive artifacts
-      run: |
-          cd ..
-          zip -r emotion-back-deploy.zip .
-          cd -
+      run: zip -r emotion-back-deploy.zip . # 현재 디렉토리에 압축 파일 생성
+
     - name: List files in directory
       run: ls
 
