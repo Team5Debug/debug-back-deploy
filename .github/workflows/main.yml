@@ -42,6 +42,8 @@ jobs:
           cd ..
           zip -r emotion-back-deploy.zip .
           cd -
+    - name: List files in directory
+      run: ls
 
 
 
