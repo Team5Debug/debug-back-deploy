@@ -29,7 +29,7 @@ jobs:
         aws-region: ap-northeast-2
 
     - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./debug-back-deploy.tar.gz s3://lsm-s3/archive/
+      run: aws s3 cp --region ap-northeast-2 ./debug-back-deploy.tar.gz s3://my-github-action-lsm/archive/
 
     - name: Deploy with AWS CodeDeploy
-      run: aws deploy create-deployment --application-name Debug-App --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name Debug-group-deploy --s3-location bucket=github-action-codedeploy-s3,bundleType=tgz,key=archive/debug-back-deploy.tar.gz
+      run: aws deploy create-deployment --application-name my-codedeploy-app --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name my-codedeploy-app-group --s3-location bucket=github-action-codedeploy-s3,bundleType=tgz,key=archive/debug-back-deploy.tar.gz
