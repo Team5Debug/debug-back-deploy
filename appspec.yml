@@ -15,7 +15,7 @@ hooks:
   BeforeInstall:
   
   AfterInstall:
-    - location: scripts/stop.sh
+    - location: emotion/scripts/start.sh
       timeout: 180
       runas: ubuntu # (optional) If you need to specify the user to run the script as
   ApplicationStart:
