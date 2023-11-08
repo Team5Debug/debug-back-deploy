@@ -85,6 +85,11 @@ public class Controller {
 
         return userService.saveClass(PH);
     }
+    @RequestMapping(“/test”)
+    public string test8(){
+
+    return “200”;
+    }
 
     //구매내역 가져오기
     @GetMapping("/getPurchaseHistory")
