@@ -87,8 +87,7 @@ public class Controller {
     }
     @RequestMapping(“/test”)
     public string test8(){
-
-    return “200”;
+        return “200”;
     }
 
     //구매내역 가져오기
