@@ -38,7 +38,7 @@ jobs:
     
 
     - name: Archive artifacts
-      run: tar cvfz emotion-back-deploy.tar.gz -C ./emotion .
+      run: zip -r emotion-back-deploy.zip . -C ./emotion .
 
   
 
@@ -51,7 +51,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Upload to AWS S3
-      run: aws s3 cp emotion-back-deploy.tar.gz s3://${{ env.S3_BUCKET_NAME }}/emotion-back-deploy.tar.gz
+      run: aws s3 cp emotion-back-deploy.zip s3://${{ env.S3_BUCKET_NAME }}/emotion-back-deploy.tar.gz
 
 
     - name: AWS configure credentials
@@ -67,4 +67,4 @@ jobs:
           --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
           --deployment-config-name CodeDeployDefault.OneAtATime \
           --deployment-group-name ${{ env.CODE_DEPLOY_DEPLOYMENT_GROUP_NAME }} \
-          --s3-location bucket=${{ env.S3_BUCKET_NAME }},bundleType=tar.gz,key=emotion-back-deploy.tar.gz
+          --s3-location bucket=${{ env.S3_BUCKET_NAME }},bundleType=zip,key=emotion-back-deploy.zip
