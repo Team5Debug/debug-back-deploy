@@ -10,6 +10,11 @@ permissions:
     group: ubuntu
     mode: 755
 hooks:
-   deployment-lifecycle-event-name:
-     - location: /home/ubuntu/Debug/
-       timeout: timeout-in-seconds
+  AfterInstall:
+    - location: scripts/stop.sh
+      timeout: 60
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 60
+      runas: ubuntu
