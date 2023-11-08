@@ -6,9 +6,10 @@ files:
     overwrite: yes
 permissions:
   - object: /home/ubuntu/Debug/
+    pattern: '**'
     owner: ubuntu
     group: ubuntu
-    mode: '755' /home/ubuntu/Debug/
+    mode: '755'
 
 hooks:
   BeforeInstall:
