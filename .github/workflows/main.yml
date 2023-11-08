@@ -30,7 +30,8 @@ jobs:
     
 
     - name: Archive artifacts
-      run: tar cvfz debug-back-deploy.tar.gz --exclude='.git/hooks' .
+      run: tar cvfz debug-back-deploy.tar.gz --exclude='.git' .
+  
 
 
     - name: AWS configure credentials
