@@ -21,9 +21,6 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-      
-    - name: Build with Gradle
-      run : ./gradlew clean build --exclude-task test
 
     - name: Archive artifacts
       run: tar cvfz debug-back-deploy.tar.gz .
