@@ -1,11 +1,15 @@
 version: 0.0
 os: linux
-
 files:
-  - source: /
-    destination: /home/ubuntu/debug-back-deploy
+- source: /	
+    destination: /home/ubuntu/Debug/
+    overwrite: yes
 permissions:
-  - object: /home/ubuntu/debug-back-deploy
+  - object: /home/ubuntu/Debug/
     owner: ubuntu
     group: ubuntu
     mode: 755
+hooks:
+   deployment-lifecycle-event-name:
+     - location: /home/ubuntu/Debug/
+       timeout: timeout-in-seconds
