@@ -27,21 +27,24 @@ jobs:
         distribution: 'adopt'
         java-version: 11
 
+    - name: Grant execute permission for gradlew
+      run: chmod +x ./emotion/gradlew
+      shell: bash
+      
     - name: init with Gradle
       uses: gradle/gradle-build-action@v2
     - run: gradle init
-    
+      
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
-      with:
-        arguments: build
+      run: ./emotion/gradlew build
+      shell: bash
+  
     
 
     - name: Archive artifacts
       run: zip -r emotion-back-deploy.zip . # 현재 디렉토리에 압축 파일 생성
 
-    - name: List files in directory
-      run: ls
+     
 
 
 
