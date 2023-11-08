@@ -38,7 +38,7 @@ jobs:
     
 
     - name: Archive artifacts
-      run: cd ./emotion
+      run: |
           zip -r ../emotion-back-deploy.zip .
 
 
