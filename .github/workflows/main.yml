@@ -30,7 +30,8 @@ jobs:
     
 
     - name: Archive artifacts
-      run: tar cvfz debug-back-deploy.tar.gz --exclude='.git' .
+      run: tar cvfz emotion-back-deploy.tar.gz -C ./emotion .
+
   
 
 
