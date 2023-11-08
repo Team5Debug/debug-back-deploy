@@ -53,13 +53,6 @@ jobs:
     - name: Upload to AWS S3
       run: aws s3 cp emotion-back-deploy.tar.gz s3://${{ env.S3_BUCKET_NAME }}/emotion-back-deploy.tar.gz
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
 
     - name: AWS configure credentials
       uses: aws-actions/configure-aws-credentials@v1
