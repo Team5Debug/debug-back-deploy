@@ -6,7 +6,7 @@ files:
     overwrite: yes
 permissions:
   - object: /home/ubuntu/Debug/
-    owner: ubuntu
+    owner: Debug2
     group: ubuntu
     mode: '755'
 hooks:
