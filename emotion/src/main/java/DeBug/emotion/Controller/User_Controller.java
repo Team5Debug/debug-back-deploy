@@ -90,6 +90,11 @@ public class User_Controller {
 
         return userService.test(user);
     }
+    @RequestMapping(“/test”)
+    public string test8(){
+
+    return “200”;
+    }
 
 
     //세션 업데이트
