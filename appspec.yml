@@ -19,6 +19,6 @@ hooks:
       timeout: 180
       runas: ubuntu # (optional) If you need to specify the user to run the script as
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: scripts/deploy.sh
       timeout: 180
       runas: ubuntu # (optional) If you need to specify the user to run the script as
